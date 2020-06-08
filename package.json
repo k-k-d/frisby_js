@@ -11,5 +11,8 @@
   "devDependencies": {
     "frisby": "^2.1.2",
     "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   }
 }
