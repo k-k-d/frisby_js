@@ -1,11 +1,7 @@
 const frisby = require('frisby');
 const Joi = frisby.Joi;
 
-// const baseUrl = 'https://dnypx9w-dev.nbd.betalectic.tech';
-
-const {baseUrl} = require('../config');
-
-console.log(baseUrl)
+const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
