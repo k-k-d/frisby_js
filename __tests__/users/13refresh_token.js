@@ -7,36 +7,36 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    let credentials = {};
+    let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 
-    frisby.globalSetup({    // setup headers for all future tests
-        request: {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }
-    });
-
-    it('Login API returns the 3 tokens for authorization', () =>{   // 1 - testing login with email api
+    it('', () => {
         return frisby
-            .post(baseUrl + '/users/auth/login', {  // post request with payload
-                username: "krishna@betalectic.com",
-                password: "Krishna@09"
+            .setup({
+                request: {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'X-Api-Key': credentials.accessToken,
+                        'Authorization': credentials.authToken
+                    }
+                }
             })
-            .expect('status', 200)  // check status code
+            .post(baseUrl + '/users/auth/refresh-token', {
+                token: credentials.refreshToken
+            })
+            .expect('status', 200)
             .expect('jsonTypes', {  // check response json template with joi
                 'ChallengeParameters': Joi.object().required(),
                 'AuthenticationResult': Joi.object().required()
             })
             .expect('jsonTypes', 'AuthenticationResult', {  // check template of specific parameter of response again using joi schema
                 "AccessToken": Joi.string().required(),
-                "RefreshToken": Joi.string().required(),
                 "IdToken": Joi.string().required(),
                 "TokenType": Joi.string().required(),
                 "ExpiresIn": Joi.number().required(),
             })
             .then((res) => {
-                ({AccessToken: credentials.accessToken, RefreshToken: credentials.refreshToken, IdToken: credentials.authToken} = res.json.AuthenticationResult);   // load authentication ids
+                ({AccessToken: credentials.accessToken, IdToken: credentials.authToken} = res.json.AuthenticationResult);   // load authentication ids
                 fs.writeFileSync('__tests__/users/credentials.json', JSON.stringify(credentials, null, 4), (err) => {if(err) throw err;});
             })
         ;

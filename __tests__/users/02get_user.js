@@ -26,7 +26,7 @@ describe('', () => {
             .expect('jsonTypes', {  // check if response compares with expected template
                 'full_name': Joi.string().required()
             })
-            .then((res) => {console.log(res.json);})
+            .inspectJSON()
         ;
     });
 });

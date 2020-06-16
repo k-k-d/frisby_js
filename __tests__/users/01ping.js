@@ -16,6 +16,9 @@ describe('', () => {
                 'b': Joi.number().required(),
                 'sum': Joi.number().required()
             })
+            .expect('json', {
+                status: 'ok'
+            })
             .then((res) => {
                 expect(res.json.a + res.json.b).toEqual(res.json.sum);
             })
