@@ -29,7 +29,7 @@ describe('', () => {
             })
             .then((res) => {
                 ({AccessToken: credentials.accessToken, RefreshToken: credentials.refreshToken, IdToken: credentials.authToken} = res.json.AuthenticationResult);   // load authentication ids
-                fs.writeFileSync('__tests__/users/credentials.json', JSON.stringify(credentials, null, 4), (err) => {if(err) throw err;});
+                fs.writeFileSync('__tests__/users/credentials.json', JSON.stringify(credentials, null, 4), (err) => {});
             })
         ;
     });
