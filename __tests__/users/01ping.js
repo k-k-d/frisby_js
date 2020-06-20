@@ -19,7 +19,7 @@ describe('', () => {
             .expect('json', {
                 status: 'ok'
             })
-            .then((res) => {
+            .then((res) => {    // whatever we wanna do with the response -> res.json
                 expect(res.json.a + res.json.b).toEqual(res.json.sum);
             })
         ;
