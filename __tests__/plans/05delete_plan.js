@@ -9,7 +9,7 @@ describe('', () => {
 
     let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 
-    it('Change Password', () => {
+    it('', () => {
         return frisby
             .setup({
                 request: {
@@ -21,18 +21,9 @@ describe('', () => {
                     }
                 }
             })
-            .post(baseUrl + '/users/auth/change-password', {
-                "old_password": process.env.PASSWORD1,
-                "password": process.env.PASSWORD,
-                "confirm_password": process.env.PASSWORD
-            })
-            .expect('status', 400)
-            .inspectResponse()
-            .then(res => {
-                // let temp = process.env.PASSWORD1;
-                // process.env.PASSWORD1 = process.env.PASSWORD;
-                // process.env.PASSWORD = temp;
-            })
+            .del(baseUrl + '/orders/plans/4cbcab74-d23e-4397-81f7-3b097dc6910f')
+            .expect('status', 200)
+            .inspectJSON()
         ;
     });
 });

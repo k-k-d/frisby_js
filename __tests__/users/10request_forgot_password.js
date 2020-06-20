@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Request Forgot Password', () => {
         return frisby
             .post(baseUrl + '/users/auth/request-forgot-password', {
                 username: process.env.MOBILE,

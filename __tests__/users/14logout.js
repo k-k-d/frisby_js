@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Logout', () => {
         return frisby
             .get(baseUrl + '/users/auth/logout', {
                 redirect_uri: 'http://localhost:8000/signout'

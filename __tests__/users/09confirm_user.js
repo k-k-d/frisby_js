@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Confirm User', () => {
         return frisby
             .post(baseUrl + '/users/auth/confirm', {
                 username: process.env.MOBILE,
@@ -15,10 +15,6 @@ describe('', () => {
             .expect('jsonTypes', {
                 message: Joi.string().required(),
                 code: Joi.string().required()
-            })
-            .expect('json', {
-                message: "Invalid code provided, please request a code again.",
-                code: "ExpiredCodeException"
             })
             .inspectResponse()
         ;

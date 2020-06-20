@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const baseUrl = process.env.BASEURL;
 
-describe('', () => {
+describe('Get flows for User', () => {
 
     let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 

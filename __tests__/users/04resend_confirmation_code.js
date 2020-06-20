@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Resend Confirmation Code', () => {
         return frisby
             .post(baseUrl + '/users/auth/resend', {
                 username: process.env.EMAIL

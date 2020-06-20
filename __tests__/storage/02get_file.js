@@ -9,7 +9,7 @@ describe('', () => {
 
     let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 
-    it('', () => {
+    it('Get File', () => {
         return frisby
             .setup({
                 request: {

@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Login with Google', () => {
         return frisby
             .get(baseUrl + '/users/auth/login-with-google', {
                 redirect_uri: 'http://localhost:8000/auth-success'

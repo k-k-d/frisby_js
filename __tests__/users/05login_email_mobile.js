@@ -9,7 +9,7 @@ describe('', () => {
 
     let credentials = {};
 
-    it('Login API returns the 3 tokens for authorization', () =>{   // 1 - testing login with email api
+    it('Login with Email/Mobile', () =>{   // 1 - testing login with email api
         return frisby
             .post(baseUrl + '/users/auth/login', {  // post request with payload
                 username: process.env.EMAIL,

@@ -5,7 +5,7 @@ const baseUrl = process.env.BASEURL;
 
 describe('', () => {
 
-    it('', () => {
+    it('Register with Email/Mobile', () => {
         return frisby
             .post(baseUrl + '/users/auth/register', {
                 username: process.env.MOBILE,

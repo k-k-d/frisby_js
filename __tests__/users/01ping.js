@@ -4,7 +4,7 @@ const Joi = frisby.Joi;
 const baseUrl = process.env.BASEURL;
 
 describe('', () => {
-    it ('Successful Ping', () => {  // 0 - testing ping api
+    it ('Ping', () => {  // 0 - testing ping api
         return frisby
             .get(baseUrl + '/users/ping')   // get request
             .expect('status', 200)  // check status code

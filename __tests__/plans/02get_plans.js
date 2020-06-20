@@ -9,7 +9,7 @@ describe('', () => {
 
     let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 
-    it('Change Password', () => {
+    it('Get Plans', () => {
         return frisby
             .setup({
                 request: {
@@ -21,17 +21,20 @@ describe('', () => {
                     }
                 }
             })
-            .post(baseUrl + '/users/auth/change-password', {
-                "old_password": process.env.PASSWORD1,
-                "password": process.env.PASSWORD,
-                "confirm_password": process.env.PASSWORD
+            .get(baseUrl + '/orders/plans/index')
+            .expect('status', 200)
+            .expect('jsonTypes', {
+                Items: Joi.array().required(),
+                Count: Joi.number().integer().required(),
+                ScannedCount: Joi.number().integer().required()
             })
-            .expect('status', 400)
-            .inspectResponse()
-            .then(res => {
-                // let temp = process.env.PASSWORD1;
-                // process.env.PASSWORD1 = process.env.PASSWORD;
-                // process.env.PASSWORD = temp;
+            .expect('jsonTypes', 'Items.*', {
+                "tenant": Joi.string().required(),
+                "currency": Joi.string().required(),
+                "price": Joi.string().required(),
+                "title": Joi.string().required(),
+                "meta": Joi.object(),
+                "slug": Joi.string().required()
             })
         ;
     });

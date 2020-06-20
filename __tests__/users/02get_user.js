@@ -9,7 +9,7 @@ describe('', () => {
 
     let credentials = JSON.parse(fs.readFileSync('__tests__/users/credentials.json'));
 
-    it('User details returns the correct data', () => { // 2 - testing get user api
+    it('Get User', () => { // 2 - testing get user api
         return frisby
             .setup({    // set up headers with authentication details before sending requests
                 request: {
@@ -23,8 +23,8 @@ describe('', () => {
             })
             .get(baseUrl + '/users/account/me') // get request
             .expect('status', 200)  // check status code
-            .expect('jsonTypes', {  // check if response compares with expected template
-                'full_name': Joi.string().required()
+            .expect('jsonTypes', {
+                "tenant": Joi.string().required()
             })
             .inspectJSON()
         ;
