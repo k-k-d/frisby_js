@@ -11,7 +11,7 @@ describe('', () => {
                 username: process.env.MOBILE,
             })
             .expect('status', 500)
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

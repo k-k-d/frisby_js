@@ -35,7 +35,7 @@ describe('Get flows for User', () => {
                 "updatedAt": Joi.string().required(),
                 "deletedAt": Joi.string().allow(null)
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

@@ -17,7 +17,7 @@ describe('', () => {
                 errors: Joi.object().required()
             })
             .expect('jsonTypes', 'errors', {password: Joi.string().required()})
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

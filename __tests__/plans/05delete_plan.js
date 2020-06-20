@@ -23,7 +23,7 @@ describe('', () => {
             })
             .del(baseUrl + '/orders/plans/4cbcab74-d23e-4397-81f7-3b097dc6910f')
             .expect('status', 200)
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

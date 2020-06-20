@@ -42,7 +42,7 @@ describe('', () => {
                 },
                 "slug": "plan-abc-xyz1"
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

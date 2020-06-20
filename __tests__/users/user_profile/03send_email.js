@@ -31,7 +31,7 @@ describe('', () => {
             .expect('jsonTypes', {
                 message: Joi.string().required()
             })
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

@@ -27,7 +27,7 @@ describe('', () => {
                 "url": Joi.string().required(),
                 "path": Joi.string().required(),
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

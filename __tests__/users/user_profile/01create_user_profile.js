@@ -27,7 +27,7 @@ describe('', () => {
                 "display_name" : "ivk"
             })
             .expect('status', 400)
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

@@ -26,7 +26,7 @@ describe('', () => {
             })
             .expect('status', 200)
             .expect('jsonTypes', Joi.array().required())
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

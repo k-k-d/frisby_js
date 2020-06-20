@@ -32,7 +32,7 @@ describe('', () => {
                 "meta": Joi.object(),
                 "slug": Joi.string().required()
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

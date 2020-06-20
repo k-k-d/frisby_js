@@ -27,7 +27,7 @@ describe('', () => {
                 "confirm_password": process.env.PASSWORD
             })
             .expect('status', 400)
-            .inspectResponse()
+            // .inspectResponse()
             .then(res => {
                 // let temp = process.env.PASSWORD1;
                 // process.env.PASSWORD1 = process.env.PASSWORD;

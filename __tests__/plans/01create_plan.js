@@ -44,7 +44,7 @@ describe('', () => {
             .then((res) => {
                 console.log(res.json.uuid);
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

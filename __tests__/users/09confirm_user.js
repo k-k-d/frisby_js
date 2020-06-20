@@ -16,7 +16,7 @@ describe('', () => {
                 message: Joi.string().required(),
                 code: Joi.string().required()
             })
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

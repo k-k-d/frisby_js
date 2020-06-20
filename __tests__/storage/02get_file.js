@@ -31,7 +31,7 @@ describe('', () => {
                 "file_id": Joi.string().required(),
                 "actual_path": Joi.string().required()
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

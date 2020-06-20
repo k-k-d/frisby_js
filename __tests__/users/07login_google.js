@@ -11,7 +11,7 @@ describe('', () => {
                 redirect_uri: 'http://localhost:8000/auth-success'
             })
             .expect('status', 400)
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

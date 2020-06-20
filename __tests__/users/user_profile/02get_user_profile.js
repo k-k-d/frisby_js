@@ -24,7 +24,7 @@ describe('', () => {
             .get(baseUrl + '/users/profiles/1232')
             .expect('status', 200)
             .expect('jsonTypes', Joi.array().required())
-            .inspectResponse()
+            // .inspectResponse()
         ;
     });
 });

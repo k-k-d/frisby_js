@@ -19,7 +19,7 @@ describe('', () => {
                 'service': Joi.string().required(),
                 'executablePath': Joi.string().required()
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });

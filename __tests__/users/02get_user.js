@@ -26,7 +26,7 @@ describe('', () => {
             .expect('jsonTypes', {
                 "tenant": Joi.string().required()
             })
-            .inspectJSON()
+            // .inspectJSON()
         ;
     });
 });
