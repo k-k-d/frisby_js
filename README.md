@@ -1,6 +1,6 @@
 This is a template for the testing suite.
 
-The files in __tests__/users/, namely 01ping.js, 02get_user.js, 05login_email_mobile.js have comments to explain the main components which are generally used.
+The files in \_\_tests\_\_/users/, namely 01ping.js, 02get_user.js, 05login_email_mobile.js have comments to explain the main components which are generally used.
 
 Use 'npm test' to run the entire suite.
 
